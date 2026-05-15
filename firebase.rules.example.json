@@ -1,0 +1,96 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "courses": {
+      ".read": true,
+      ".write": "auth != null && (root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin' || root.child('users').child(auth.uid).child('profile').child('role').val() === 'superadmin')"
+    },
+    "problems": {
+      ".read": true,
+      ".write": "auth != null && (root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin' || root.child('users').child(auth.uid).child('profile').child('role').val() === 'superadmin')"
+    },
+    "users": {
+      ".read": "auth != null && (root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin' || root.child('users').child(auth.uid).child('profile').child('role').val() === 'superadmin')",
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin' || root.child('users').child(auth.uid).child('profile').child('role').val() === 'superadmin')",
+        ".write": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('profile').child('role').val() === 'admin' || root.child('users').child(auth.uid).child('profile').child('role').val() === 'superadmin')",
+        "profile": {
+          ".validate": "newData.hasChildren(['displayName', 'email'])"
+        },
+        "trackedCourses": {
+          "$courseId": {
+            ".validate": "newData.hasChildren(['courseId', 'source', 'title', 'startedAt', 'updatedAt', 'status'])"
+          }
+        },
+        "customCourses": {
+          "$courseId": {
+            ".validate": "newData.hasChildren(['id', 'name', 'category', 'lessons'])"
+          }
+        },
+        "courseProgress": {
+          "$courseId": {
+            "$lessonIndex": {
+              ".validate": "newData.isBoolean()"
+            }
+          }
+        },
+        "tasks": {
+          "$taskId": {
+            ".validate": "newData.hasChildren(['id', 'name', 'priority', 'done'])"
+          }
+        },
+        "notes": {
+          "$noteId": {
+            ".validate": "newData.hasChildren(['id', 'title', 'body', 'tone'])"
+          }
+        },
+        "schedule": {
+          "$scheduleId": {
+            ".validate": "newData.hasChildren(['id', 'name', 'time', 'dur'])"
+          }
+        },
+        "problemStatuses": {
+          "$problemId": {
+            ".validate": "newData.isString()"
+          }
+        },
+        "submissions": {
+          "$submissionId": {
+            ".validate": "newData.hasChildren(['id', 'probId', 'pass', 'lang', 'time'])"
+          }
+        },
+        "stats": {
+          ".validate": "newData.hasChildren(['score', 'streak', 'lessonsWeek', 'activity'])"
+        },
+        "pomodoro": {
+          "settings": {
+            ".validate": "newData.hasChildren(['focus', 'short', 'long', 'sound'])"
+          },
+          "stats": {
+            ".validate": "newData.hasChildren(['count', 'totalSec'])"
+          }
+        },
+        "settings": {
+          "notifications": {
+            ".validate": "newData.hasChildren(['study', 'task', 'streak'])"
+          }
+        }
+      }
+    },
+    "userEmails": {
+      "$emailKey": {
+        ".read": true,
+        ".write": "auth != null && (!data.exists() || data.child('uid').val() === auth.uid || newData.val() === null) && (!newData.exists() || newData.child('uid').val() === auth.uid)",
+        ".validate": "!newData.exists() || newData.hasChildren(['uid', 'email', 'updatedAt'])"
+      }
+    },
+    "leaderboard": {
+      ".read": true,
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid",
+        ".validate": "newData.hasChildren(['uid', 'name', 'initials', 'level', 'score', 'updatedAt'])"
+      }
+    }
+  }
+}

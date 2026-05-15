@@ -1,0 +1,277 @@
+.problem-leaderboard {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+
+  &__header {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--color-text-primary, #000);
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    color: var(--color-text-secondary, #666);
+    margin: 0;
+  }
+
+  /* Filter Tabs */
+  &__filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__filter-btn {
+    padding: 8px 16px;
+    border: 2px solid var(--color-border, #e0e0e0);
+    background: var(--color-bg-secondary, #f5f5f5);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--color-text-primary, #000);
+
+    &:hover {
+      border-color: var(--color-primary, #007bff);
+      background: var(--color-bg-hover, #f0f0f0);
+    }
+
+    &--active {
+      border-color: var(--color-primary, #007bff);
+      background: var(--color-primary, #007bff);
+      color: white;
+    }
+  }
+
+  /* Loading & Error States */
+  &__loading,
+  &__error,
+  &__empty {
+    padding: 48px 24px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--color-text-secondary, #666);
+    border-radius: 8px;
+    background: var(--color-bg-secondary, #f5f5f5);
+  }
+
+  &__error {
+    background: #fee;
+    color: #c33;
+  }
+
+  /* Table Container & Styling */
+  &__table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid var(--color-border, #e0e0e0);
+    background: var(--color-bg-primary, #fff);
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+
+  &__header-row {
+    background: var(--color-bg-secondary, #f5f5f5);
+    border-bottom: 2px solid var(--color-border, #e0e0e0);
+  }
+
+  &__header-row th {
+    padding: 16px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-text-primary, #000);
+    white-space: nowrap;
+  }
+
+  /* Table Columns */
+  &__col {
+    padding: 12px;
+    border-bottom: 1px solid var(--color-border, #e0e0e0);
+    vertical-align: middle;
+
+    &--rank {
+      width: 60px;
+      text-align: center;
+    }
+
+    &--username {
+      flex: 1;
+    }
+
+    &--count {
+      width: 120px;
+      text-align: right;
+      padding-right: 24px;
+    }
+  }
+
+  /* Table Rows */
+  &__row {
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--color-bg-hover, #fafafa);
+    }
+
+    &--medal {
+      font-weight: 600;
+
+      &:hover {
+        background-color: inherit;
+      }
+    }
+
+    // Gold (1st place)
+    &--rank1 {
+      background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), transparent);
+
+      .problem-leaderboard__medal,
+      .problem-leaderboard__username,
+      .problem-leaderboard__count {
+        color: #d4a520;
+      }
+
+      &:hover {
+        background: linear-gradient(90deg, rgba(255, 215, 0, 0.15), transparent);
+      }
+    }
+
+    // Silver (2nd place)
+    &--rank2 {
+      background: linear-gradient(90deg, rgba(192, 192, 192, 0.1), transparent);
+
+      .problem-leaderboard__medal,
+      .problem-leaderboard__username,
+      .problem-leaderboard__count {
+        color: #8c8c8c;
+      }
+
+      &:hover {
+        background: linear-gradient(90deg, rgba(192, 192, 192, 0.15), transparent);
+      }
+    }
+
+    // Bronze (3rd place)
+    &--rank3 {
+      background: linear-gradient(90deg, rgba(205, 127, 50, 0.1), transparent);
+
+      .problem-leaderboard__medal,
+      .problem-leaderboard__username,
+      .problem-leaderboard__count {
+        color: #cd7f32;
+      }
+
+      &:hover {
+        background: linear-gradient(90deg, rgba(205, 127, 50, 0.15), transparent);
+      }
+    }
+  }
+
+  /* Medal & Text Styling */
+  &__medal {
+    font-size: 16px;
+    margin-right: 4px;
+    display: inline-block;
+  }
+
+  &__rank-num {
+    font-weight: 500;
+  }
+
+  &__username {
+    font-weight: 500;
+    color: var(--color-text-primary, #000);
+  }
+
+  &__count {
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .problem-leaderboard {
+    padding: 16px;
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__filter-btn {
+      padding: 6px 12px;
+      font-size: 13px;
+    }
+
+    &__table {
+      font-size: 14px;
+    }
+
+    &__header-row th {
+      padding: 12px 8px;
+    }
+
+    &__col {
+      padding: 10px 6px;
+
+      &--count {
+        padding-right: 12px;
+      }
+    }
+
+    &__medal {
+      font-size: 14px;
+      margin-right: 2px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .problem-leaderboard {
+    padding: 12px;
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__filters {
+      gap: 8px;
+    }
+
+    &__filter-btn {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    &__table {
+      font-size: 13px;
+    }
+
+    &__col {
+      padding: 8px 4px;
+
+      &--rank {
+        width: 50px;
+      }
+
+      &--count {
+        width: 100px;
+        padding-right: 8px;
+      }
+    }
+  }
+}

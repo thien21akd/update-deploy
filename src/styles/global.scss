@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0,0&display=swap');
+
+:root {
+  color-scheme: light;
+  --accent: #4c6fff;
+  --accent-strong: #3d5be0;
+  --accent-soft: #e8eeff;
+  --accent-muted: #7d96ff;
+  --accent-contrast: #f8fbff;
+
+  --success: #1f9d6f;
+  --success-soft: #e8f8f0;
+  --success-border: rgba(31, 157, 111, 0.2);
+  --success-text: #147252;
+  --success-solid: #1f9d6f;
+
+  --warning: #d8891f;
+  --warning-soft: #fff4e2;
+  --warning-border: rgba(216, 137, 31, 0.22);
+  --warning-text: #9a5f13;
+  --warning-solid: #d8891f;
+
+  --danger: #db5b57;
+  --danger-soft: #feeceb;
+  --danger-border: rgba(219, 91, 87, 0.22);
+  --danger-text: #aa3f3c;
+  --danger-solid: #db5b57;
+
+  --info: #3f7cff;
+  --info-soft: #eaf1ff;
+  --info-border: rgba(63, 124, 255, 0.2);
+  --info-text: #315fcb;
+  --info-solid: #3f7cff;
+
+  --bg-app: #f3f5f8;
+  --bg-canvas: radial-gradient(circle at top left, rgba(76, 111, 255, 0.09), transparent 31%), radial-gradient(circle at top right, rgba(76, 111, 255, 0.05), transparent 26%), #f3f5f8;
+  --surface-default: rgba(252, 253, 255, 0.82);
+  --surface-elevated: #fcfdff;
+  --surface-muted: #f7f8fb;
+  --surface-strong: #edf1f7;
+  --surface-hover: #eef2f8;
+  --surface-active: #e5ebf5;
+  --surface-inverse: #111827;
+  --border-default: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.14);
+  --border-accent: rgba(76, 111, 255, 0.24);
+  --text-primary: #101828;
+  --text-secondary: #4e596c;
+  --text-muted: #6f7b90;
+  --text-placeholder: #8793a7;
+  --text-inverse: #f8fafc;
+  --overlay: rgba(8, 15, 34, 0.52);
+  --input-bg: rgba(246, 248, 252, 0.98);
+  --focus-ring: rgba(76, 111, 255, 0.24);
+  --panel-glass: rgba(252, 253, 255, 0.82);
+
+  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --shadow-strong: 0 22px 54px rgba(15, 23, 42, 0.12);
+  --shadow-floating: 0 30px 84px rgba(15, 23, 42, 0.22);
+
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-pill: 999px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  --control-height-sm: 2.25rem;
+  --control-height-md: 2.75rem;
+  --control-height-lg: 3.125rem;
+  --icon-button-size: 2.5rem;
+  --icon-button-size-sm: 2rem;
+
+  --duration-fast: 180ms;
+  --duration-mid: 240ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --indigo: var(--accent);
+  --indigo-light: var(--accent-soft);
+  --indigo-mid: var(--accent-muted);
+  --teal: var(--success);
+  --teal-light: var(--success-soft);
+  --amber: var(--warning);
+  --amber-light: var(--warning-soft);
+  --rose: var(--danger);
+  --rose-light: var(--danger-soft);
+  --sky: var(--info);
+  --sky-light: var(--info-soft);
+
+  --success-light: var(--success-soft);
+  --success-contrast: #ffffff;
+  --toast-bg: rgba(16, 24, 40, 0.96);
+  --toast-text: #f8fafc;
+  --toast-border: rgba(255, 255, 255, 0.08);
+  --modal-shadow: var(--shadow-floating);
+  --editor-shell: #f3f5f8;
+  --editor-panel-left: #fcfdff;
+  --editor-panel-right: #0f172a;
+  --editor-border: rgba(148, 163, 184, 0.18);
+  --editor-code-bg: #0f172a;
+  --editor-output-bg: #111827;
+  --editor-text-left: #0f172a;
+  --editor-text-right: #e5eefc;
+  --ghost-dark-border: rgba(203, 213, 225, 0.24);
+  --ghost-dark-bg: rgba(15, 23, 42, 0.44);
+  --ghost-dark-text: #e5eefc;
+  --finished-bg: #ffffff;
+  --finished-border: rgba(15, 23, 42, 0.08);
+  --finished-text: #101828;
+  --finished-muted: #667085;
+  --streak-bg: linear-gradient(135deg, rgba(255, 244, 226, 0.96), rgba(255, 233, 205, 0.96));
+  --streak-border: rgba(217, 119, 6, 0.2);
+  --streak-text: #9a5b0a;
+  --streak-highlight: #c46c0b;
+  --leaderboard-avatar-bg: #e9eef9;
+  --page-accent-glow: rgba(76, 111, 255, 0.1);
+  --page-accent-glow-2: rgba(76, 111, 255, 0.06);
+  --note-amber-bg: var(--warning-soft);
+  --note-amber-border: var(--warning-border);
+  --note-sky-bg: var(--info-soft);
+  --note-sky-border: var(--info-border);
+  --note-teal-border: var(--success-border);
+  --note-solid-bg: linear-gradient(180deg, #4f6fff, #3b53c7);
+  --note-solid-border: rgba(76, 111, 255, 0.24);
+  --note-solid-shadow: 0 18px 34px rgba(76, 111, 255, 0.18);
+  --difficulty-easy-bg: var(--success-soft);
+  --difficulty-easy-text: var(--success-text);
+  --difficulty-medium-bg: var(--warning-soft);
+  --difficulty-medium-text: var(--warning-text);
+  --difficulty-hard-bg: var(--danger-soft);
+  --difficulty-hard-text: var(--danger-text);
+  --roadmap-done-bg: var(--success-soft);
+  --roadmap-done-border: var(--success-border);
+  --tabs-dark-bg: rgba(15, 23, 42, 0.32);
+  --chart-bar-muted: #c6d2e6;
+
+  --bg: var(--bg-app);
+  --surface: var(--surface-elevated);
+  --surface-2: var(--surface-muted);
+  --border: var(--border-default);
+  --border-2: var(--border-strong);
+  --text-1: var(--text-primary);
+  --text-2: var(--text-secondary);
+  --text-3: var(--text-muted);
+  --radius-sm: var(--radius-12);
+  --radius-md: var(--radius-16);
+  --radius-lg: var(--radius-20);
+  --shadow-sm: var(--shadow-soft);
+  --shadow-md: var(--shadow-strong);
+}
+
+body[data-theme='dark'] {
+  color-scheme: dark;
+  --success-soft: rgba(31, 157, 111, 0.16);
+  --success-border: rgba(72, 211, 156, 0.24);
+  --success-text: #8ff0ca;
+  --warning-soft: rgba(216, 137, 31, 0.16);
+  --warning-border: rgba(251, 191, 36, 0.22);
+  --warning-text: #ffd498;
+  --danger-soft: rgba(219, 91, 87, 0.16);
+  --danger-border: rgba(248, 113, 113, 0.24);
+  --danger-text: #ffb8b4;
+  --info-soft: rgba(63, 124, 255, 0.16);
+  --info-border: rgba(125, 150, 255, 0.24);
+  --info-text: #b5c7ff;
+
+  --bg-app: #080d18;
+  --bg-canvas: radial-gradient(circle at top left, rgba(76, 111, 255, 0.12), transparent 28%), radial-gradient(circle at top right, rgba(76, 111, 255, 0.06), transparent 22%), #080d18;
+  --surface-default: rgba(11, 17, 31, 0.9);
+  --surface-elevated: #101724;
+  --surface-muted: #141d2d;
+  --surface-strong: #192438;
+  --surface-hover: #1b283e;
+  --surface-active: #22324c;
+  --surface-inverse: #f8fafc;
+  --border-default: rgba(148, 163, 184, 0.14);
+  --border-strong: rgba(148, 163, 184, 0.24);
+  --border-accent: rgba(125, 150, 255, 0.36);
+  --text-primary: #f8fbff;
+  --text-secondary: #dde6f4;
+  --text-muted: #b7c3d6;
+  --text-placeholder: #adbad0;
+  --text-inverse: #0f172a;
+  --overlay: rgba(2, 6, 23, 0.72);
+  --input-bg: rgba(19, 30, 47, 0.98);
+  --focus-ring: rgba(125, 150, 255, 0.28);
+  --panel-glass: rgba(11, 17, 31, 0.9);
+  --shadow-soft: 0 14px 34px rgba(2, 6, 23, 0.38);
+  --shadow-strong: 0 24px 58px rgba(2, 6, 23, 0.5);
+  --shadow-floating: 0 30px 84px rgba(2, 6, 23, 0.64);
+  --success-contrast: #e7fff6;
+  --toast-bg: rgba(8, 13, 24, 0.96);
+  --toast-text: #f8fafc;
+  --toast-border: rgba(148, 163, 184, 0.14);
+  --editor-shell: #070c17;
+  --editor-panel-left: #101724;
+  --editor-panel-right: #080d18;
+  --editor-border: rgba(148, 163, 184, 0.18);
+  --editor-code-bg: #080d18;
+  --editor-output-bg: #070c17;
+  --editor-text-left: #edf3ff;
+  --editor-text-right: #edf3ff;
+  --ghost-dark-border: rgba(148, 163, 184, 0.18);
+  --ghost-dark-bg: rgba(15, 23, 42, 0.52);
+  --ghost-dark-text: #edf3ff;
+  --finished-bg: #101724;
+  --finished-border: rgba(148, 163, 184, 0.18);
+  --finished-text: #f8fafc;
+  --finished-muted: #a9b6ca;
+  --streak-bg: linear-gradient(135deg, rgba(216, 137, 31, 0.16), rgba(216, 137, 31, 0.08));
+  --streak-border: rgba(251, 146, 60, 0.24);
+  --streak-text: #ffd7a8;
+  --streak-highlight: #ffbc68;
+  --leaderboard-avatar-bg: rgba(255, 255, 255, 0.08);
+  --page-accent-glow: rgba(76, 111, 255, 0.18);
+  --page-accent-glow-2: rgba(76, 111, 255, 0.1);
+  --note-amber-bg: var(--warning-soft);
+  --note-amber-border: var(--warning-border);
+  --note-sky-bg: var(--info-soft);
+  --note-sky-border: var(--info-border);
+  --note-teal-border: var(--success-border);
+  --difficulty-easy-bg: var(--success-soft);
+  --difficulty-easy-text: var(--success-text);
+  --difficulty-medium-bg: var(--warning-soft);
+  --difficulty-medium-text: var(--warning-text);
+  --difficulty-hard-bg: var(--danger-soft);
+  --difficulty-hard-text: var(--danger-text);
+  --roadmap-done-bg: var(--success-soft);
+  --roadmap-done-border: var(--success-border);
+  --tabs-dark-bg: rgba(15, 23, 42, 0.88);
+  --chart-bar-muted: #2b3953;
+  --note-solid-bg: linear-gradient(180deg, rgba(28, 42, 67, 0.96), rgba(17, 27, 44, 0.98));
+  --note-solid-border: rgba(125, 150, 255, 0.22);
+  --note-solid-shadow: 0 18px 38px rgba(2, 6, 23, 0.34);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  transition: background-color var(--duration-mid) var(--ease-standard), color var(--duration-mid) var(--ease-standard);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  cursor: text;
+}
+
+select {
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+button,
+input,
+select,
+textarea,
+[role='button'] {
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard),
+    opacity var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+a {
+  color: inherit;
+}
+
+input,
+select,
+textarea {
+  color-scheme: light dark;
+}
+
+input,
+textarea,
+select {
+  color: var(--text-primary);
+}
+
+select option {
+  background: var(--surface-elevated);
+  color: var(--text-primary);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-placeholder);
+  opacity: 1;
+}
